@@ -65,7 +65,7 @@ dask==2.9.0
 decorator==4.4.1
 defusedxml==0.6.0
 diff-match-patch==20181111
-distributed==2.9.0
+setuptools==0.7.3
 Django==3.2.5
 django-block-ip==0.2.0
 django-elasticsearch-dsl==7.2.0
