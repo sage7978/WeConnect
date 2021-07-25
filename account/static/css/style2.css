@@ -1,0 +1,152 @@
+.menuTitle{
+    font-size: 1.35em;
+}
+
+
+.introduction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15%;
+    flex-direction: column;
+}
+.title{
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.extend{
+    font-size: 0.75em;
+}
+
+.header{
+    display: inline;
+    color: black;
+}
+
+.uheader{
+    padding-top: 10%;
+    display: block;
+}
+
+.joinButton{
+    margin-top: 10%;
+    width: 130px;
+}
+
+.msg{
+    background-color: rgb(166, 253, 166);
+    padding: 10px;
+    margin-top: 10px;
+    width: fit-content;
+    max-width: 650px;
+    min-width: 350px;
+    word-wrap: break-word;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.left-text{
+    border-radius: 0px 7px 7px 7px;
+}
+
+
+.left-shape{
+    width: 0;
+    height: 0;
+    margin-top: 10px;
+    border-top: 5px solid rgb(166, 253, 166);
+    border-left: 5px solid transparent;
+}
+
+.left-shape-null{
+    width: 0;
+    height: 0;
+    margin-top: 10px;
+    border-top: 5px solid white;
+    border-left: 5px solid transparent;
+}
+
+
+.right-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right-text{
+    border-radius: 7px 0px 7px 7px;
+}
+
+.right-shape{
+    width: 0;
+    height: 0;
+    margin-top: 10px;
+    border-top: 6px solid rgb(166, 253, 166);
+    border-right: 6px solid transparent;
+}
+
+.right-shape-null{
+    width: 0;
+    height: 0;
+    margin-top: 10px;
+    border-top: 6px solid white;
+    border-left: 6px solid transparent;
+}
+
+.scroll{
+    border: 1px solid #333333;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+
+/* .editor {
+  /*position: absolute;
+    bottom: 4px;
+    left: 5px;
+    right: 50px;
+    padding: 7px;
+    min-height: 40px;
+    background: #fff;
+    border-radius: 15px;
+    border: 5px solid coral;
+    width: 350px;
+    margin-right: 10px;
+    margin-left: 10px;
+    flex: 1 1 0;
+    /* max-height: 100px; 
+} */
+
+.input-msg {
+  border: 2px solid red;
+  flex: 1 1 auto;
+  font-size: 16px;
+  margin: 0;
+  margin-right: 5px;
+  outline: none;
+  min-width: 50px;
+  word-break: break-all;
+}
+
+textarea{
+    resize: none;
+}
+
+.control-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.control-button{
+    padding: 0;
+    margin: 0;
+    height: 40px;
+}
+/* .stranger-text{
+    
+} */

@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WeConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <!-- Add custom stylesheet here -->
+    <style type="text/css">
+      .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+    </style>
+  </head>
+  <body>
+
+    <!-- <div class="container">
+        <button class="ui green basic button">Green</button>
+    </div> -->
+    <div class="ui stackable menu menu-central" style="display: flex; flex-direction: row; justify-content: space-around;">
+      <a class="item"><span class="menuTitle">WeConnect</span></a>
+      
+      <div class="tooltip">
+        <span class="logo-testing" style="font-size: 21px;">&#920</span>
+        <span class="tooltiptext">Theta Program</span>
+      </div>
+      <div class="right menu">
+        <div class="user-details">
+          <i class="user outline icon user_icon" style="font-size: 30px; margin-top: 10px; margin-right: 5px;"></i>
+          <span class="user-name" style="margin-right: 5px;">{{request.user.first_name}}</span>
+        </div>
+        <a class="ui item" href="{% url "logout" %}">
+          Logout
+        </a>
+      </div>
+    </div>
+
+    <div class="ui container intro-area">
+      <div class="introduction">
+        <h1 class="ui inverted header" style="color:#181616;">
+          <span class="uheader title">WeConnect</span>
+          <span class="uheader extend">Chat to Strangers Now</span>
+        </h1>
+        <button class="ui inverted green button joinButton">Connect</button>
+      </div>
+    </div>
+  
+
+    <div class="ui container wait-area" style="display: none;">
+      <div class="ui icon message">
+        <i class="notched circle loading icon loading-icon"></i>
+        <div class="intro-content">
+          <div class="intro-header">
+            Just one second
+          </div>
+          <p>We're connecting you to someone</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui container chat-area" style="display: none;">
+      <div class="ui segment messages-container">
+        <div class="only-chats scroll" id="scrollChat">
+          <!--
+          <div class="left-container">
+            <div class="left-shape"></div>
+            <div class="left-text msg"><span class="stranger-text"><em>Stranger </em></span><br> Hello gggg</div>
+          </div>
+
+          <div class="left-container">
+            <div class="left-shape-null"></div>
+            <div class="left-text msg"><span class="stranger-text"><em>Stranger </em></span><br> Hello gggg ljajsfg vfkdfhkhfha sKDKASHF SJDFJASKF SSSJFKS FNDAFJDFJ JFJADJd GNSDKGHDH FJSASSHSJhd fasjfjahfh</div>
+          </div>
+
+
+          <div class="right-container">
+            <div class="right-text msg"><span class="you-text"><em>You </em></span><br> Hi buddy.</div>
+            <div class="right-shape"></div>
+          </div>
+
+          <div class="right-container">
+            <div class="right-text msg"><span class="you-text"><em>You </em></span><br> Hi buddy. jjgdgjdg fjsadghadhgsD dSDsdgsdsd dhsudg bgjsfggjfghsj fsdfh vsbjghfg ghsghfsjghs dhsgjsh fsdjhgjgs gsghjshgsj</div>
+            <div class="right-shape-null"></div>
+          </div>
+          
+          <div class="right-container">
+            <div class="right-text msg"><span class="you-text"><em>You </em></span><br> Hi buddy. jjgdgjdg fjsadghadhgsD dSDsdgsdsd dhsudg bgjsfggjfghsj fsdfh vsbjghfg ghsghfsjghs dhsgjsh fsdjhgjgs gsghjshgsj</div>
+            <div class="right-shape-null"></div>
+          </div>
+
+
+          <div class="right-container">
+            <div class="right-text msg"><span class="you-text"><em>You </em></span><br> Hi buddy. jjgdgjdg fjsadghadhgsD dSDsdgsdsd dhsudg bgjsfggjfghsj fsdfh vsbjghfg ghsghfsjghs dhsgjsh fsdjhgjgs gsghjshgsj</div>
+            <div class="right-shape-null"></div>
+          </div>
+
+          <div class="right-container">
+            <div class="right-text msg"><span class="you-text"><em>You </em></span><br> Hi buddy. jjgdgjdg fjsadghadhgsD dSDsdgsdsd dhsudg bgjsfggjfghsj fsdfh vsbjghfg ghsghfsjghs dhsgjsh fsdjhgjgs gsghjshgsj</div>
+            <div class="right-shape-null"></div>
+          </div>
+          
+          <div class="right-container">
+            <div class="right-text msg"><span class="you-text"><em>You </em></span><br> Hi buddy. jjgdgjdg fjsadghadhgsD dSDsdgsdsd dhsudg bgjsfggjfghsj fsdfh vsbjghfg ghsghfsjghs dhsgjsh fsdjhgjgs gsghjshgsj</div>
+            <div class="right-shape-null"></div>
+          </div>
+          
+          <div class="right-container">
+            <div class="right-text msg"><span class="you-text"><em>You </em></span><br> Hi buddy. jjgdgjdg fjsadghadhgsD dSDsdgsdsd dhsudg bgjsfggjfghsj fsdfh vsbjghfg ghsghfsjghs dhsgjsh fsdjhgjgs gsghjshgsj</div>
+            <div class="right-shape-null"></div>
+          </div>
+          
+          <div class="right-container">
+            <div class="right-text msg"><span class="you-text"><em>You </em></span><br> Hi buddy. jjgdgjdg fjsadghadhgsD dSDsdgsdsd dhsudg bgjsfggjfghsj fsdfh vsbjghfg ghsghfsjghs dhsgjsh fsdjhgjgs gsghjshgsj</div>
+            <div class="right-shape-null"></div>
+          </div>-->
+        </div>
+      
+        <div class="control-container">
+         <button class="negative ui button control-button exitButton" id="exitButton">Exit</button>
+          <!-- <div contenteditable="true" class="editor"></div> -->
+          <!-- <textarea contenteditable="true" class="editor"></textarea> -->
+          <textarea class="input-msg" name="input" id="input-msg" placeholder="Type a message" autocomplete="off" autofocus></textarea>
+          <button class="positive ui button control-button" id="sendButton">Send</button>
+        </div>
+      
+      </div>
+    </div>
+    <!-- Write your html code here -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/peerdriver.js' %}"></script>
+    <script>
+      var intro_area = $('.intro-area');
+      var wait_area = $('.wait-area');
+      var chat_area = $('.chat-area');
+      var intro_content = $('.intro-content');
+
+      var loading_icon = $('.loading-icon');
+
+      var send_button = $('#sendButton');
+      var exit_button = $('.exitButton');
+      var exit_freq = 0;
+
+      var current_active_person = 1; //1-ME OR 0-PEER
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      function connected(){
+        loading_icon.toggle();
+        intro_content.empty();
+        intro_content.append("<div class='intro-header'>Woah, You are connected.</div><p>Say Hello!!!</p>");
+      }
+
+      
+
+      $(send_button).click(function(){
+        var msg_val = $('.input-msg').val();
+        if(msg_val!==""){
+          $(".input-msg").val('');
+          add_to_my_msg(msg_val);
+        }
+        //msg_val.html('');
+        //$(".scrolls").animate({ scrollTop: $('.scrolls')[0].scrollHeight}, 1000);
+      });
+
+      $('.joinButton').click(function(){
+        intro_area.toggle();
+        wait_area.toggle();
+        console.log("Join Button Clicked");
+        initialize();
+      });
+
+
+
+      exit_button.click(function(){
+        if(exit_freq === 0){
+          exit_button.text("Really??");
+          exit_freq = (exit_freq + 1)%2;
+        }
+        else{
+          off();
+          exit_freq = (exit_freq + 1)%2;
+          window.location = '/';
+        }
+      });
+
+      // window.addEventListener('beforeunload', function (e) {
+      //   // Cancel the event
+      //   //e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+      //   //console.log("Exit");
+      //   off();
+      //   // Chrome requires returnValue to be set
+      //   e.returnValue = '';
+      // });
+    </script>
+  </body>
+</html>
