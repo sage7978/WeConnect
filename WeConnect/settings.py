@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-$0)%p*(yq&p9)#6%ff1y5tgs^0b^8gn9s_v0(5^73lyd6h$o*-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1', 'https://weconnect-org.herokuapp.com/',]
+ALLOWED_HOSTS = ['localhost','127.0.0.1', 'weconnect-org.herokuapp.com/',]
 
 
 # Application definition
@@ -130,8 +130,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+if DEBUG:
+   STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static'),
+   ]
+else:
+   STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
