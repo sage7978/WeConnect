@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-$0)%p*(yq&p9)#6%ff1y5tgs^0b^8gn9s_v0(5^73lyd6h$o*-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['weconnect.org','localhost','127.0.0.1', 'sampledomain.com',]
+ALLOWED_HOSTS = ['localhost','127.0.0.1', 'https://weconnect-org.herokuapp.com/',]
 
 
 # Application definition
